@@ -14,7 +14,6 @@ public class Main implements ActionListener {
         f=new JFrame("Puzzle");
         f.setSize(450, 500);
         f.setLayout(null);
-        f.setVisible(true);
         f.getContentPane().setBackground(Color.orange);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -57,6 +56,8 @@ public class Main implements ActionListener {
         l=new JLabel("Moves: "+moves);
         l.setBounds(190,55,100,10);
         f.add(l);
+
+        f.setVisible(true);
 
 
         b1.addActionListener(this);
@@ -262,10 +263,10 @@ public class Main implements ActionListener {
                 (b5.getText().equals("5")) && (b6.getText().equals("6")) &&
                 (b7.getText().equals("7")) && (b8.getText().equals("8")) &&
                 (b9.getText().equals(""))) {
-            if(moves>2) {
+            if(moves>3) {
                 JOptionPane.showMessageDialog(null,"You win in "+moves+" moves!!");
             }
-            else {
+            else if(moves==2){
                 JOptionPane.showMessageDialog(f,"DO NOT CHEAT!!!!","ALERT",JOptionPane.WARNING_MESSAGE);
                 moves=0;
             }
